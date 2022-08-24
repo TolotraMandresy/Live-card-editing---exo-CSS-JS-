@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style/style.css">
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <div id="cartsContainer" class="font-Grotesk">
+        <div id="cartPreview" class="carte">
+          <div id="previewContent">
+            <div>
+              <img src="images/card-logo.svg" alt="icon">
+            </div>
+            <div>
+              <p id="id">
+                0000 0000 0000 0000
+              </p>
+              <p id="nameAndDateExp">
+                <span id="name">Jane Appleseed</span>
+                <span id="dateExp">00/00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="cartBack" class="carte">
+          <img src="images/bg-card-back.png" alt="cartBack">
+          <p id="cvc">000</p>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <form action="#" method="post" onsubmit="">
+        <div class="form-control">
+          <label for="nameInput">Cardholder Name</label><br>
+          <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed">
+        </div>
+        <div class="form-control">
+          <label for="nameInput">Card Number</label><br>
+          <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000">
+        </div>
+        <div>
+          <div class="form-control" id="dateExpCvc">
+            <div id="monthAndYear">
+              <label for="monthInput">Exp. Date (MM/YY)</label>
+              <div id="dateExp">
+                <input type="month" name="month" id="monthInput" placeholder="MM">
+                <input type="number" name="year" placeholder="YY" min="2022">
+              </div>
+            </div>
+            <div id="hafa">
+              <label for="monthInput">CVC</label>
+              <input type="number" name="year" placeholder="e.g. 123">
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" value="Confirm" id="confirm" class="font-Grotesk">
+      </form>
+    </section>
+
+    <!-- Completed state start -->
+
+    Thank you!
+    We've added your card details
+    Continue
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+
+</html>
