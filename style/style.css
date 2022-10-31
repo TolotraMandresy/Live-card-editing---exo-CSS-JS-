@@ -2,7 +2,7 @@
     --width: 250px;
     --height: 140px;
     --light-grayish-purple: hsl(270, 3%, 87%);
-    --dark-grayish-purple: hsl(279, 6%, 55%);
+    --dark-grayish-purple: hsl(276, 5%, 42%);
     --very-dark-purple: hsl(278, 68%, 11%);
 }
 
@@ -34,11 +34,14 @@ header{
 
 #cartsContainer{
     color: white;
-    width: 375px;
+    max-width: 375px;
+    height: min-content;
     display: flex;
+    padding: 5px 5px;
+    box-sizing: border-box;
     position: absolute;
         top: 50px;
-    justify-items: center;
+    justify-content: center;
     flex-direction: column-reverse;
     font-size: small;
 }
@@ -61,18 +64,15 @@ header{
     display: flex;
     align-self: center;
     align-items: center;
-    
-    position: relative;
-        bottom: 60px;
-        right: 25px;
+    transform: translate(-25px, -60px);
+}
+
+#cartPreview img{
+    height: 35px;
 }
 
 #previewContent{
     width: 100%;
-}
-
-#cartPreview img{
-    height: 30px;
 }
 
 #id{
@@ -126,12 +126,13 @@ section{
 }
 form{
     width: 80%;
-    margin-top: 80px;
-    padding: 60px 0 60px 0;
+    margin-top: 65px;
+    padding: 30px 0 60px 0;
 }
 
 .form-control{
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .form-control label{
@@ -141,38 +142,62 @@ form{
     color: var(--very-dark-purple)
 }
 
-.form-control input[type="text"], .form-control input[type="number"], .form-control input[type="month"]{
-    box-sizing: border-box;
+.form-control .gradient{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 8px 15px;
     margin-top: 6px;
+    padding: 2.8px;
+    background-image: linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    border-radius: 7.5px;
 }
+
+.form-control input[type="text"], .form-control input[type="number"], .form-control input[type="month"]{
+    border-color: transparent;
+    outline: 1px solid lightslategray;
+    outline-offset: 0;
+    width: 100%;
+    padding: 6px 6px 6px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 4px white;
+
+    transition: box-shadow 0.4s linear;
+}
+
 
 .form-control input::placeholder{
     color: var(--dark-grayish-purple);
 }
 
 .form-control input:focus{
-    border-color: hsl(278, 94%, 30%);
+    outline: 1px none;
+    box-shadow: 0 0 0 4px transparent;
 }
 
+
 #dateExpCvc{
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    column-gap: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#monthAndYear .gradient{
+    min-width: 72px;
+    max-width: 80px;
 }
 
 #monthAndYear{
-    display: grid;
-    grid-template-columns: auto;
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 #dateExp{
-    display: grid;
-    grid-template-columns: 47% 47%;
-    column-gap: 3px;
+    display: flex;
+    flex-direction: row;
 }
+
 
 #confirm{
     box-sizing: border-box;
@@ -182,4 +207,17 @@ form{
     border-radius: 5px;
     color: var(--light-grayish-purple);
     background-color: var(--very-dark-purple);
+}
+
+@media (max-width: 315px){
+    #cartsContainer{
+        width: 100%;
+    }
+    #cartPreview, #cartBack{
+        position: static;
+        transform: translate(0);
+    }
+    section form{
+        width: 90%;
+    }
 }

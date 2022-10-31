@@ -56,23 +56,31 @@
       <form action="#" method="post" onsubmit="">
         <div class="form-control">
           <label for="nameInput">Cardholder Name</label><br>
-          <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed">
+          <div class="gradient">
+            <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed">
+          </div>
         </div>
         <div class="form-control">
           <label for="nameInput">Card Number</label><br>
-          <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000">
+          <div class="gradient">
+            <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000">
+          </div>
         </div>
-        <div>
-          <div class="form-control" id="dateExpCvc">
-            <div id="monthAndYear">
-              <label for="monthInput">Exp. Date (MM/YY)</label>
-              <div id="dateExp">
+        <div class="form-control" id="dateExpCvc">
+          <div id="monthAndYear">
+            <label for="monthInput">Exp. Date (MM/YY)</label>
+            <div id="dateExp">
+              <div class="gradient">
                 <input type="month" name="month" id="monthInput" placeholder="MM">
+              </div>
+              <div class="gradient">
                 <input type="number" name="year" placeholder="YY" min="2022">
               </div>
             </div>
-            <div id="hafa">
-              <label for="monthInput">CVC</label>
+          </div>
+          <div id="hafa">
+            <label for="monthInput">CVC</label>
+            <div class="gradient">
               <input type="number" name="year" placeholder="e.g. 123">
             </div>
           </div>
@@ -92,6 +100,8 @@
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </div>
+
+    <!-- !REHEFA LATSAKA NY 310PX DE MIPOAKA -->
   </body>
 
 </html>
