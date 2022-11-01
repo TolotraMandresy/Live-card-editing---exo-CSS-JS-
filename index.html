@@ -25,81 +25,94 @@
   </head>
 
   <body>
-
-    <header>
-      <div id="cartsContainer" class="font-Grotesk">
-        <div id="cartPreview" class="carte">
-          <div id="previewContent">
-            <div>
-              <img src="images/card-logo.svg" alt="icon">
-            </div>
-            <div>
-              <p id="id">
-                0000 0000 0000 0000
-              </p>
-              <p id="nameAndDateExp">
-                <span id="name">Jane Appleseed</span>
-                <span id="dateExp">00/00</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div id="cartBack" class="carte">
-          <img src="images/bg-card-back.png" alt="cartBack">
-          <p id="cvc">000</p>
-        </div>
-      </div>
-    </header>
-
-    <section>
-      <form action="#" method="post" onsubmit="">
-        <div class="form-control">
-          <label for="nameInput">Cardholder Name</label><br>
-          <div class="gradient">
-            <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed">
-          </div>
-        </div>
-        <div class="form-control">
-          <label for="nameInput">Card Number</label><br>
-          <div class="gradient">
-            <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000">
-          </div>
-        </div>
-        <div class="form-control" id="dateExpCvc">
-          <div id="monthAndYear">
-            <label for="monthInput">Exp. Date (MM/YY)</label>
-            <div id="dateExp">
-              <div class="gradient">
-                <input type="month" name="month" id="monthInput" placeholder="MM">
+    <div id="content">
+      <header>
+        <div id="cartsContainer" class="font-Grotesk">
+          <div id="cartPreview" class="carte">
+            <div id="previewContent">
+              <div>
+                <img src="images/card-logo.svg" alt="icon">
               </div>
-              <div class="gradient">
-                <input type="number" name="year" placeholder="YY" min="2022">
+              <div>
+                <p id="id">
+                  0000 0000 0000 0000
+                </p>
+                <p id="nameAndDateExp">
+                  <span id="name">Jane Appleseed</span>
+                  <span id="dateExpShow">00/00</span>
+                </p>
               </div>
             </div>
           </div>
-          <div id="hafa">
-            <label for="monthInput">CVC</label>
-            <div class="gradient">
-              <input type="number" name="year" placeholder="e.g. 123">
-            </div>
+  
+          <div id="cartBack" class="carte">
+            <img src="images/bg-card-back.png" alt="cartBack">
+            <p id="cvc">000</p>
           </div>
         </div>
-
-        <input type="submit" value="Confirm" id="confirm" class="font-Grotesk">
-      </form>
-    </section>
+      </header>
+  
+      <section>
+        <div id="formAndMsg">
+          <form action="#" method="post" onsubmit="">
+            <div class="form-control">
+              <label for="nameInput">Cardholder Name</label><br>
+              <div class="gradient">
+                <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed" class="font-Grotesk">
+              </div>
+            </div>
+            <div class="form-control">
+              <label for="nameInput">Card Number</label><br>
+              <div class="gradient">
+                <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000"
+                  class="font-Grotesk">
+              </div>
+            </div>
+            <div id="dateExpCvc">
+              <div id="monthAndYear" class="form-control">
+                <label for="monthInput">Exp. Date (MM/YY)</label>
+                <div id="dateExp">
+                  <div class="gradient">
+                    <input type="month" name="month" id="monthInput" placeholder="MM" class="font-Grotesk">
+                  </div>
+                  <div class="gradient">
+                    <input type="number" name="year" placeholder="YY" min="2022" class="font-Grotesk">
+                  </div>
+                </div>
+              </div>
+              <div id="hafa" class="form-control">
+                <label for="monthInput">CVC</label>
+                <div class="gradient">
+                  <input type="text" name="year" placeholder="e.g. 123" class="font-Grotesk">
+                </div>
+              </div>
+            </div>
+    
+            <input type="button" value="Confirm" class="confirm font-Grotesk">
+          </form>
+    
+          <div id="success-msg">
+            <div id="successIcon">
+              <img src="./images/icon-complete.svg" alt="success icon">
+            </div>
+            <p class="font-Grotesk">
+              <span id="thanks">Thank you!</span> 
+              <br>
+              <span id="msg">We've added your card details</span>
+            </p>
+            <a href="index.html" class="confirm font-Grotesk">Continue</a>
+          </div>
+        </div>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="#">Your Name Here</a>.
+        </div>
+      </section>
+    </div>
 
     <!-- Completed state start -->
 
-    Thank you!
-    We've added your card details
-    Continue
 
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
 
     <!-- !REHEFA LATSAKA NY 310PX DE MIPOAKA -->
   </body>

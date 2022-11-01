@@ -1,7 +1,7 @@
-:root{
-    --width: 250px;
-    --height: 140px;
-    --light-grayish-purple: hsl(270, 3%, 87%);
+:root {
+    --width: 270px;
+    --height: 150px;
+    --light-grayish-purple: hsl(0, 0%, 69%);
     --dark-grayish-purple: hsl(276, 5%, 42%);
     --very-dark-purple: hsl(278, 68%, 11%);
 }
@@ -11,213 +11,462 @@
     src: url(font/SpaceGrotesk-VariableFont_wght.ttf);
 }
 
-html, body{
+html,
+body {
     margin: 0;
     padding: 0;
-    width:100%;
-    overflow-x: hidden;
+    width: 100%;
+    overflow: hidden;
 }
 
-header{
+header {
     display: flex;
     justify-content: center;
     background: url(../images/bg-main-mobile.png) no-repeat center;
     background-size: cover;
-    padding-top: 35px;
-    padding-bottom: 40px;
-    height: var(--height);
+    padding: 50px 10px 40px 10px;
+    height: calc(var(--height) - 30px);
+    position: relative;
 }
 
-.font-Grotesk{
+.font-Grotesk {
     font-family: 'Grotesk';
 }
 
-#cartsContainer{
+#cartsContainer {
     color: white;
     max-width: 375px;
-    height: min-content;
     display: flex;
     padding: 5px 5px;
-    box-sizing: border-box;
     position: absolute;
-        top: 50px;
+    top: 30px;
     justify-content: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     font-size: small;
+    z-index: 20;
 }
 
-.carte{
+.carte {
     box-sizing: border-box;
     border-radius: 5px;
     width: var(--width);
     min-height: var(--height);
     max-height: var(--height);
-    box-shadow: rgba(63, 63, 63, 0.329) 20px 20px 25px;
+    box-shadow: 20px 20px 25px 0px rgba(80, 80, 80, 0.315);
 }
 
-#cartPreview{
-    z-index: 200;
-    padding: 20px; 
+#cartPreview {
+    z-index: 20;
     background: url(../images/bg-card-front.png) no-repeat center;
     background-size: cover;
-    letter-spacing: 2.5px;    
+    letter-spacing: 2.5px;
     display: flex;
     align-self: center;
-    align-items: center;
-    transform: translate(-25px, -60px);
+    transform: translate(-28px, 65px);
 }
 
-#cartPreview img{
+#cartPreview img {
     height: 35px;
 }
 
-#previewContent{
+#previewContent {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    padding: 20px;
 }
 
-#id{
+#previewContent #id {
     margin-top: 25px;
     margin-bottom: 10px;
+    font-size: 16px;
     font-weight: 600;
 }
 
-#nameAndDateExp{
+#previewContent #nameAndDateExp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 0px;
     font-weight: 300;
     font-size: smaller;
 }
 
-#dateExp{
-    float: right;
-}
-
-#cartBack{
-    z-index: 100;
+#previewContent #dateExpShow {
     align-self: center;
-    position: relative;
-        left: 30px;
 }
 
-#cartBack img{
+#cartBack {
+    z-index: 10;
+    align-self: center;
+    transform: translate(25px, -168px);
+}
+
+#cartBack img {
     width: 100%;
     height: 100%;
 }
 
-#cvc{
+#cvc {
     width: 81%;
     box-sizing: border-box;
     position: relative;
-        bottom: 97px;
+    bottom: calc(var(--height) / 2 + 24px);
     margin-left: auto;
     margin-right: auto;
     padding-right: 10px;
     text-align: right;
     font-weight: bold;
-    font-size: small;
+    font-size: smaller;
 }
 
 
 
 /* ---------SECTION-------- */
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+section {
+    position: relative;
+    z-index: 30;
+    padding-top: 100px;
+    width: 86vw;
+    max-width: 380px;
+    height: calc(100vh - (var(--height) + 80px + 100px));
+    margin: auto;
 }
-form{
-    width: 80%;
-    margin-top: 65px;
-    padding: 30px 0 60px 0;
+#formAndMsg{
+    width: 90%;
+    box-sizing: content-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-.form-control{
-    margin-bottom: 20px;
+form {
+    width: 100%;
     box-sizing: border-box;
+    transition: display 4s;
 }
 
-.form-control label{
+.form-control {
+    margin-bottom: 14px;
+    width: 100%;
+}
+
+.form-control label {
+    margin-left: 3px;
     text-transform: uppercase;
     font-family: 'Grotesk';
     font-weight: bold;
     color: var(--very-dark-purple)
 }
 
-.form-control .gradient{
+.form-control .gradient {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 6px;
-    padding: 2.8px;
+    margin: 2px 2px 0 0;
+    padding: 2px;
     background-image: linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
-    border-radius: 7.5px;
+    background-image: -o-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-image: -moz-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-image: -webkit-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    border-radius: 7px;
+    box-sizing: border-box;
 }
 
-.form-control input[type="text"], .form-control input[type="number"], .form-control input[type="month"]{
+.form-control input[type="text"],
+.form-control input[type="number"],
+.form-control input[type="month"] {
+    color: var(--very-dark-purple);
     border-color: transparent;
     outline: 1px solid lightslategray;
     outline-offset: 0;
     width: 100%;
     padding: 6px 6px 6px 15px;
     border-radius: 5px;
-    box-shadow: 0px 0px 0px 4px white;
+    box-shadow: 0px 0px 0px 3px white;
 
-    transition: box-shadow 0.4s linear;
+    transition: box-shadow 0.3s linear;
 }
 
 
-.form-control input::placeholder{
+.form-control input::placeholder {
     color: var(--dark-grayish-purple);
 }
 
-.form-control input:focus{
+.form-control input:focus {
     outline: 1px none;
-    box-shadow: 0 0 0 4px transparent;
+    box-shadow: 0 0 0 3px transparent;
 }
 
 
-#dateExpCvc{
+#dateExpCvc {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-#monthAndYear .gradient{
-    min-width: 72px;
-    max-width: 80px;
+#monthAndYear .gradient {
+    max-width: 90px;
 }
 
-#monthAndYear{
+#monthAndYear .gradient,
+#hafa .gradient {
+    min-width: 82px;
+}
+
+#monthAndYear {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    padding-right: 5px;
+    box-sizing: border-box;
 }
 
-#dateExp{
+#dateExp {
     display: flex;
     flex-direction: row;
 }
 
 
-#confirm{
+.confirm {
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
     width: 100%;
     padding: 10px 5px;
     border: none;
     border-radius: 5px;
-    color: var(--light-grayish-purple);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
     background-color: var(--very-dark-purple);
+    transition: background 0.5s ease-in, transform 0.3s ease-in-out;
 }
 
-@media (max-width: 315px){
-    #cartsContainer{
+.confirm:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-image: linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-image: -o-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-image: -moz-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-image: -webkit-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+}
+
+.confirm:active {
+    transform: scale(0.95);
+}
+
+#success-msg, form{
+    display: inline-block;
+}
+
+#success-msg {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+#success-msg>* {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#success-msg img {
+    margin: auto;
+    width: 80px;
+    height: 80px;
+}
+
+#success-msg p {
+    margin: 35px auto;
+}
+
+#success-msg #thanks {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--very-dark-purple);
+    margin-bottom: 10px;
+}
+
+#success-msg #msg {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--light-grayish-purple);
+}
+
+.hide {
+    display: none !important;
+}
+
+.attribution {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 315px) {
+    #cartsContainer {
         width: 100%;
+        box-sizing: border-box;
     }
-    #cartPreview, #cartBack{
+
+    #cartPreview {
         position: static;
-        transform: translate(0);
+        margin: auto;
+        transform: translate(-15px, 67px);
     }
-    section form{
+    #cartBack {
+        margin: auto;
+        transform: translate(15px, -168px);
+    }
+
+
+    #cartBack {
+        align-self: flex-end;
+    }
+
+    section {
         width: 90%;
+    }
+
+    #dateExpCvc {
+        flex-direction: column;
+    }
+
+    #monthAndYear {
+        padding: 0;
+    }
+
+    #dateExp {
+        justify-content: space-between;
+    }
+
+    #dateExp>* {
+        width: 48%;
+        max-width: 48% !important;
+    }
+}
+
+@media(min-width: 600px) {
+    :root {
+        --width: 300px;
+        --height: 183px;
+    }
+
+    #content {
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    header {
+        height: 100vh;
+        width: 40vw;
+        padding: 0;
+        max-width: calc(var(--width) * 0.9);
+    }
+
+    .carte {
+        border-radius: 8px;
+    }
+
+    #cartsContainer {
+        top: 50%;
+        width: var(--width);
+        max-width: var(--width) !important;
+        transform: translate(2%, -50%);
+    }
+
+    #cartPreview {
+        order: 0;
+        transform: translate(4vw, 20%);
+    }
+
+    #cartPreview img {
+        height: 40px;
+    }
+
+    #cartPreview #id {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+
+    #cartPreview #nameAndDateExp {
+        font-size: 14px;
+    }
+
+    #cartBack {
+        order: 1;
+        position: static;
+        transform: translate(6vw, -20%);
+    }
+
+    section {
+        width: 55vw;
+        height: 100vh;
+        padding: 0;
+        align-content: center;
+        position: relative;
+        margin: auto;
+        transform: translateX(calc(15% - 1vw));
+    }
+
+    #formAndMsg {
+        width: 80%;
+    }
+}
+
+@media(min-width: 1000px) {
+    :root {
+        --width: 420px;
+        --height: 225px;
+    }
+
+    header {
+        width: 35vw;
+        max-width: 650px;
+    }
+
+    #cartsContainer {
+        transform: translate(0, -50%);
+    }
+
+    .carte {
+        width: var(--width);
+    }
+
+    #cartPreview {
+        padding: 4px 10px;
+        transform: translate(20%, -10px);
+        overflow: auto;
+    }
+
+    #cartPreview img {
+        height: 45px;
+    }
+
+    #cartPreview #id {
+        font-size: 24px;
+        margin: 45px auto 20px auto;
+    }
+
+    #cartBack {
+        transform: translate(35%, 10px);
+    }
+
+    section {
+        transform: translateX(calc(18% - 2vw));
+    }
+
+    #formAndMsg {
+        width: 90%;
+        max-width: 360px;
     }
 }
