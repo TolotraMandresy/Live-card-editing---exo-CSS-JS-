@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon-32x32.png">
+    <link rel="stylesheet" href="./src/style/style.css">
 
     <title>Frontend Mentor | Interactive card details form</title>
 
@@ -31,7 +31,7 @@
           <div id="cartPreview" class="carte">
             <div id="previewContent">
               <div>
-                <img src="images/card-logo.svg" alt="icon">
+                <img src="./src/images/card-logo.svg" alt="icon">
               </div>
               <div>
                 <p id="id">
@@ -46,7 +46,7 @@
           </div>
   
           <div id="cartBack" class="carte">
-            <img src="images/bg-card-back.png" alt="cartBack">
+            <img src="./src/images/bg-card-back.png" alt="cartBack">
             <p id="cvc">000</p>
           </div>
         </div>
@@ -88,19 +88,19 @@
               </div>
             </div>
     
-            <input type="button" value="Confirm" class="confirm font-Grotesk">
+            <input type="button" value="Confirm" class="confirm font-Grotesk" onclick="toggleSuccessMessage()">
           </form>
     
           <div id="success-msg">
             <div id="successIcon">
-              <img src="./images/icon-complete.svg" alt="success icon">
+              <img src="./src/images/icon-complete.svg" alt="success icon">
             </div>
             <p class="font-Grotesk">
               <span id="thanks">Thank you!</span> 
               <br>
               <span id="msg">We've added your card details</span>
             </p>
-            <a href="index.html" class="confirm font-Grotesk">Continue</a>
+            <button class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Continue</button>
           </div>
         </div>
         <div class="attribution">
@@ -110,11 +110,6 @@
       </section>
     </div>
 
-    <!-- Completed state start -->
-
-
-
-    <!-- !REHEFA LATSAKA NY 310PX DE MIPOAKA -->
+    <script src="./src/script/script.js"></script>
   </body>
-
 </html>

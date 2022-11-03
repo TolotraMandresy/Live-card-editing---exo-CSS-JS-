@@ -16,10 +16,11 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header {
+    position: fixed;
     display: flex;
     justify-content: center;
     background: url(../images/bg-main-mobile.png) no-repeat center;
@@ -27,6 +28,7 @@ header {
     padding: 50px 10px 40px 10px;
     height: calc(var(--height) - 30px);
     position: relative;
+    z-index: 30px;
 }
 
 .font-Grotesk {
@@ -120,30 +122,58 @@ header {
     font-size: smaller;
 }
 
-
+header.moveLateraly #cartPreview{
+    transform: translate(calc(25px - var(--width)), 65px);
+}
+header.moveLateraly #cartBack{
+    transform: translate(calc(25px + var(--width)), -168px);
+}
 
 /* ---------SECTION-------- */
 section {
-    position: relative;
+    position: relative !important;
     z-index: 30;
     padding-top: 100px;
     width: 86vw;
     max-width: 380px;
     height: calc(100vh - (var(--height) + 80px + 100px));
+    min-height: calc((var(--height) + 80px + 100px));
     margin: auto;
+    overflow-x: hidden;
 }
-#formAndMsg{
+
+#formAndMsg {
     width: 90%;
     box-sizing: content-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
 }
+
+#formAndMsg.showMessage form{
+    transform: translateX(-100vw);
+}
+
+#formAndMsg.showMessage #success-msg{
+    transform: translateX(0);
+    display: flex;
+}
+
+#formAndMsg #success-msg{
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(100vw);
+    position: absolute;
+}
+
+form, #success-msg{
+    flex-direction: column;
+}
+
 form {
     width: 100%;
     box-sizing: border-box;
-    transition: display 4s;
+    transition: transform 0.5s ease-in-out;
 }
 
 .form-control {
@@ -258,10 +288,6 @@ form {
     transform: scale(0.95);
 }
 
-#success-msg, form{
-    display: inline-block;
-}
-
 #success-msg {
     width: 100%;
     margin-bottom: 60px;
@@ -299,10 +325,6 @@ form {
     color: var(--light-grayish-purple);
 }
 
-.hide {
-    display: none !important;
-}
-
 .attribution {
     width: 100%;
     position: absolute;
@@ -322,6 +344,7 @@ form {
         margin: auto;
         transform: translate(-15px, 67px);
     }
+
     #cartBack {
         margin: auto;
         transform: translate(15px, -168px);
@@ -371,6 +394,8 @@ form {
         width: 40vw;
         padding: 0;
         max-width: calc(var(--width) * 0.9);
+        background: url(../images/bg-main-desktop.png) no-repeat center;
+        background-size: cover;
     }
 
     .carte {
@@ -412,7 +437,6 @@ form {
         width: 55vw;
         height: 100vh;
         padding: 0;
-        align-content: center;
         position: relative;
         margin: auto;
         transform: translateX(calc(15% - 1vw));
@@ -420,6 +444,10 @@ form {
 
     #formAndMsg {
         width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
