@@ -58,14 +58,14 @@
             <div class="form-control">
               <label for="nameInput">Cardholder Name</label><br>
               <div class="gradient">
-                <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed" class="font-Grotesk">
+                <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
               </div>
             </div>
             <div class="form-control">
               <label for="nameInput">Card Number</label><br>
               <div class="gradient">
                 <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000"
-                  class="font-Grotesk">
+                  class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
               </div>
             </div>
             <div id="dateExpCvc">
@@ -73,17 +73,17 @@
                 <label for="monthInput">Exp. Date (MM/YY)</label>
                 <div id="dateExp">
                   <div class="gradient">
-                    <input type="month" name="month" id="monthInput" placeholder="MM" class="font-Grotesk">
+                    <input type="month" name="month" id="monthInput" placeholder="MM" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
                   </div>
                   <div class="gradient">
-                    <input type="number" name="year" placeholder="YY" min="2022" class="font-Grotesk">
+                    <input type="number" name="year" placeholder="YY" min="2022" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
                   </div>
                 </div>
               </div>
               <div id="hafa" class="form-control">
                 <label for="monthInput">CVC</label>
                 <div class="gradient">
-                  <input type="text" name="year" placeholder="e.g. 123" class="font-Grotesk">
+                  <input type="text" name="year" placeholder="e.g. 123" class="font-Grotesk" onfocus="cardsAnimation.animate(true)">
                 </div>
               </div>
             </div>
@@ -103,10 +103,10 @@
             <button class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Continue</button>
           </div>
         </div>
-        <div class="attribution">
+        <!-- <div class="attribution">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
           Coded by <a href="#">Your Name Here</a>.
-        </div>
+        </div> -->
       </section>
     </div>
 

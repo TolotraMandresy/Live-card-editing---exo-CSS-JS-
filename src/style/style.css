@@ -4,6 +4,13 @@
     --light-grayish-purple: hsl(0, 0%, 69%);
     --dark-grayish-purple: hsl(276, 5%, 42%);
     --very-dark-purple: hsl(278, 68%, 11%);
+
+    --transform-Y-back: -168px;
+    --transform-Y-front: 65px;
+    --transform-X-back: 25px;
+
+    --lateral-transition-duration: 200ms;
+    --vertical-transition-duration: 300ms;
 }
 
 @font-face {
@@ -54,7 +61,8 @@ header {
     width: var(--width);
     min-height: var(--height);
     max-height: var(--height);
-    box-shadow: 20px 20px 25px 0px rgba(80, 80, 80, 0.315);
+    box-shadow: 20px 20px 25px 0px rgba(46, 46, 46, 0.315);
+    transition: left var(--lateral-transition-duration) ease-in-out, top var(--vertical-transition-duration) ease-in-out;
 }
 
 #cartPreview {
@@ -64,7 +72,9 @@ header {
     letter-spacing: 2.5px;
     display: flex;
     align-self: center;
-    transform: translate(-28px, 65px);
+    position: relative;
+        top: var(--transform-Y-front);
+        left: calc(-1 * var(--transform-X-back));
 }
 
 #cartPreview img {
@@ -99,9 +109,11 @@ header {
 }
 
 #cartBack {
-    z-index: 10;
+    z-index: 19;
     align-self: center;
-    transform: translate(25px, -168px);
+    position: relative;
+        top: var(--transform-Y-back);
+        left: var(--transform-X-back);
 }
 
 #cartBack img {
@@ -122,11 +134,25 @@ header {
     font-size: smaller;
 }
 
-header.moveLateraly #cartPreview{
-    transform: translate(calc(25px - var(--width)), 65px);
+#cartsContainer.moveLaterally #cartPreview{
+    left: calc(var(--transform-X-back) - (var(--width) / 2));
 }
-header.moveLateraly #cartBack{
-    transform: translate(calc(25px + var(--width)), -168px);
+#cartsContainer.moveLaterally #cartBack{
+    left: calc(var(--transform-X-back) + (var(--width) / 2));
+}
+#cartsContainer.moveVertically #cartPreview{
+    top: calc(var(--height) + var(--transform-Y-back));
+}
+#cartsContainer.moveVertically #cartBack{
+    top: calc(-1 * (var(--height)) + var(--transform-Y-front));
+}
+#cartsContainer.revertCards #cartPreview{
+    z-index: 19;
+    left: var(--transform-X-back);
+}
+#cartsContainer.revertCards #cartBack{
+    z-index: 20;
+    left: calc(-1 * var(--transform-X-back));
 }
 
 /* ---------SECTION-------- */
@@ -339,24 +365,45 @@ form {
         box-sizing: border-box;
     }
 
-    #cartPreview {
-        position: static;
-        margin: auto;
-        transform: translate(-15px, 67px);
+    #cartPreview, #cartBack{
+        position: absolute;
+        /* left: 50%; */
+        transform: translateX(-50%);
     }
 
-    #cartBack {
-        margin: auto;
-        transform: translate(15px, -168px);
+    #cartPreview{
+        top: -10px;
+        left: 47%;
+    }
+    #cartBack{
+        left: 53%;
+        top: 10px;
     }
 
-
-    #cartBack {
-        align-self: flex-end;
+    #cartsContainer.moveLaterally #cartPreview{
+        left: calc(- var(--width));
+    }
+    #cartsContainer.moveLaterally #cartBack{
+        left: calc(var(--width));
+    }
+    #cartsContainer.moveVertically #cartPreview{
+        top: 10px;
+    }
+    #cartsContainer.moveVertically #cartBack{
+        top: -10px;
+    }
+    #cartsContainer.revertCards #cartPreview{
+        z-index: 19;
+        left: 53%;
+    }
+    #cartsContainer.revertCards #cartBack{
+        z-index: 20;
+        left: 47%;
     }
 
     section {
         width: 90%;
+        padding-top: 50px;
     }
 
     #dateExpCvc {
@@ -406,12 +453,14 @@ form {
         top: 50%;
         width: var(--width);
         max-width: var(--width) !important;
-        transform: translate(2%, -50%);
+        transform: translate(15%, -50%);
     }
 
     #cartPreview {
         order: 0;
-        transform: translate(4vw, 20%);
+        position: relative;
+        top: 0;
+        left: calc(-1 * var(--transform-X-back));
     }
 
     #cartPreview img {
@@ -429,8 +478,9 @@ form {
 
     #cartBack {
         order: 1;
-        position: static;
-        transform: translate(6vw, -20%);
+        position: relative; 
+        top: 0;
+        left: var(--transform-X-back);
     }
 
     section {
