@@ -57,7 +57,7 @@ header {
 
 .carte {
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 10px;
     width: var(--width);
     min-height: var(--height);
     max-height: var(--height);
