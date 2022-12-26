@@ -117,8 +117,8 @@ header {
 }
 
 #cartBack img {
-    width: 100%;
-    height: 100%;
+    width: var(--width);
+    height: var(--height);
 }
 
 #cvc {
@@ -141,17 +141,17 @@ header {
     left: calc(var(--transform-X-back) + (var(--width) / 2));
 }
 #cartsContainer.moveVertically #cartPreview{
+    z-index: 19;
     top: calc(var(--height) + var(--transform-Y-back));
 }
 #cartsContainer.moveVertically #cartBack{
+    z-index: 20;
     top: calc(-1 * (var(--height)) + var(--transform-Y-front));
 }
 #cartsContainer.revertCards #cartPreview{
-    z-index: 19;
     left: var(--transform-X-back);
 }
 #cartsContainer.revertCards #cartBack{
-    z-index: 20;
     left: calc(-1 * var(--transform-X-back));
 }
 
@@ -387,17 +387,17 @@ form {
         left: calc(var(--width));
     }
     #cartsContainer.moveVertically #cartPreview{
+        z-index: 19;
         top: 10px;
     }
     #cartsContainer.moveVertically #cartBack{
         top: -10px;
     }
     #cartsContainer.revertCards #cartPreview{
-        z-index: 19;
+        z-index: 20;
         left: 53%;
     }
     #cartsContainer.revertCards #cartBack{
-        z-index: 20;
         left: 47%;
     }
 
@@ -424,7 +424,7 @@ form {
     }
 }
 
-@media(min-width: 600px) {
+@media(min-width: 620px) {
     :root {
         --width: 300px;
         --height: 183px;
@@ -499,12 +499,34 @@ form {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    #cartsContainer.moveLaterally #cartPreview{
+        left: calc(var(--transform-X-back) - (var(--width) / 2));
+    }
+    #cartsContainer.moveLaterally #cartBack{
+        left: calc(var(--transform-X-back) + (var(--width) / 2));
+    }
+    #cartsContainer.moveVertically #cartPreview{
+        top: calc(var(--height) );
+    }
+    #cartsContainer.moveVertically #cartBack{
+        top: calc(-1 * (var(--height)));
+    }
+    #cartsContainer.revertCards #cartPreview{
+        left: var(--transform-X-back);
+    }
+    #cartsContainer.revertCards #cartBack{
+        left: calc(-1 * var(--transform-X-back));
+    }
 }
 
-@media(min-width: 1000px) {
+@media(min-width: 1024px) {
     :root {
         --width: 420px;
         --height: 225px;
+
+        --transform-Y-back: 10px;
+        --transform-Y-front: -10px;
+        --transform-X-back: 20%;
     }
 
     header {
@@ -522,21 +544,23 @@ form {
 
     #cartPreview {
         padding: 4px 10px;
-        transform: translate(20%, -10px);
+        top: calc(var(--transform-Y-front));
+        left: calc(var(--transform-X-back)*-1);
         overflow: auto;
     }
 
     #cartPreview img {
         height: 45px;
     }
-
+    
     #cartPreview #id {
         font-size: 24px;
         margin: 45px auto 20px auto;
     }
-
+    
     #cartBack {
-        transform: translate(35%, 10px);
+        top: calc(var(--transform-Y-back));
+        left: calc(var(--transform-X-back));
     }
 
     section {
@@ -546,5 +570,24 @@ form {
     #formAndMsg {
         width: 90%;
         max-width: 360px;
+    }
+
+    #cartsContainer.moveLaterally #cartPreview{
+        left: calc(var(--transform-X-back) - (var(--width) / 2));
+    }
+    #cartsContainer.moveLaterally #cartBack{
+        left: calc(var(--transform-X-back) + (var(--width) / 2));
+    }
+    #cartsContainer.moveVertically #cartPreview{
+        top: calc(var(--height) );
+    }
+    #cartsContainer.moveVertically #cartBack{
+        top: calc(-1 * (var(--height)));
+    }
+    #cartsContainer.revertCards #cartPreview{
+        left: var(--transform-X-back);
+    }
+    #cartsContainer.revertCards #cartBack{
+        left: calc(-1 * var(--transform-X-back));
     }
 }
