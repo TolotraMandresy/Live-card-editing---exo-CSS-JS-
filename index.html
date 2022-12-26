@@ -58,15 +58,17 @@
             <div class="form-control">
               <label for="nameInput">Cardholder Name</label><br>
               <div class="gradient">
-                <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
+                <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" maxlength="21">
               </div>
+              <small id="nameErrorMsg"></small>
             </div>
             <div class="form-control">
               <label for="nameInput">Card Number</label><br>
               <div class="gradient">
                 <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000"
-                  class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
+                class="font-Grotesk" onfocus="cardsAnimation.animate(false)" maxlength="19">
               </div>
+              <small id="idErrorMsg"></small>
             </div>
             <div id="dateExpCvc">
               <div id="monthAndYear" class="form-control">
@@ -79,16 +81,18 @@
                     <input type="number" name="year" placeholder="YY" min="2022" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
                   </div>
                 </div>
+                <small id="dateErrorMsg"></small>
               </div>
               <div id="hafa" class="form-control">
                 <label for="monthInput">CVC</label>
                 <div class="gradient">
                   <input type="text" name="year" placeholder="e.g. 123" class="font-Grotesk" onfocus="cardsAnimation.animate(true)">
                 </div>
+                <small id="dateErrorMsg"></small>
               </div>
             </div>
     
-            <input type="button" value="Confirm" class="confirm font-Grotesk" onclick="toggleSuccessMessage()">
+            <button class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Confirm</button>
           </form>
     
           <div id="success-msg">
@@ -100,14 +104,14 @@
               <br>
               <span id="msg">We've added your card details</span>
             </p>
-            <input type="button" class="confirm font-Grotesk" onclick="toggleSuccessMessage()" value="Continue">
+            <button class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Continue</button>
           </div>
         </div>
-        <!-- <div class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-          Coded by <a href="#">Your Name Here</a>.
-        </div> -->
       </section>
+      <!-- <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+      </div> -->
     </div>
 
     <script src="./src/script/script.js"></script>

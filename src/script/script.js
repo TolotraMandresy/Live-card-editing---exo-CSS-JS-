@@ -44,7 +44,7 @@ const  cardsAnimation= (function (){
 
     }
 
-    return { transitions, animate }
+    return { animate }
 })()
 
 function toggleSuccessMessage(){

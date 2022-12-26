@@ -4,6 +4,8 @@
     --light-grayish-purple: hsl(0, 0%, 69%);
     --dark-grayish-purple: hsl(276, 5%, 42%);
     --very-dark-purple: hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
+    --darken-red: hsl(0, 67%, 56%);
 
     --transform-Y-back: -168px;
     --transform-Y-front: 65px;
@@ -99,7 +101,6 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 0px;
     font-weight: 300;
     font-size: smaller;
 }
@@ -203,16 +204,25 @@ form {
 }
 
 .form-control {
-    margin-bottom: 14px;
+    margin-bottom: 2px;
     width: 100%;
 }
-
-.form-control label {
+.form-control label, .form-control small{
     margin-left: 3px;
-    text-transform: uppercase;
     font-family: 'Grotesk';
+}
+.form-control label {
+    text-transform: uppercase;
     font-weight: bold;
     color: var(--very-dark-purple)
+}
+
+.form-control small{
+    font-size: x-small;
+    font-weight: bolder;
+    letter-spacing: 1.3px;
+    vertical-align: top;
+    color: var(--red);
 }
 
 .form-control .gradient {
@@ -220,7 +230,7 @@ form {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 2px 2px 0 0;
+    margin: 2px 2px 4px 0;
     padding: 2px;
     background-image: linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     background-image: -o-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
@@ -230,9 +240,11 @@ form {
     box-sizing: border-box;
 }
 
-.form-control input[type="text"],
-.form-control input[type="number"],
-.form-control input[type="month"] {
+.form-control.error .gradient{
+    background: var(--red);
+}
+
+.form-control input{
     color: var(--very-dark-purple);
     border-color: transparent;
     outline: 1px solid lightslategray;
@@ -250,11 +262,10 @@ form {
     color: var(--dark-grayish-purple);
 }
 
-.form-control input:focus {
+.form-control input:focus, .form-control.error input {
     outline: 1px none;
     box-shadow: 0 0 0 3px transparent;
 }
-
 
 #dateExpCvc {
     width: 100%;
@@ -506,7 +517,7 @@ form {
         left: calc(var(--transform-X-back) + (var(--width) / 2));
     }
     #cartsContainer.moveVertically #cartPreview{
-        top: calc(var(--height) );
+        top: calc(var(--height));
     }
     #cartsContainer.moveVertically #cartBack{
         top: calc(-1 * (var(--height)));
@@ -521,21 +532,22 @@ form {
 
 @media(min-width: 1024px) {
     :root {
-        --width: 420px;
-        --height: 225px;
+        --width: 375px;
+        --height: 210px;
 
         --transform-Y-back: 10px;
         --transform-Y-front: -10px;
-        --transform-X-back: 20%;
+        --transform-X-back: 13%;
     }
 
     header {
-        width: 35vw;
-        max-width: 650px;
+        width: 24vw;
+        min-width: var(--width);
+        max-width: 480px;
     }
 
     #cartsContainer {
-        transform: translate(0, -50%);
+        margin-right: calc(-10vw - var(--transform-X-back));
     }
 
     .carte {
@@ -579,7 +591,7 @@ form {
         left: calc(var(--transform-X-back) + (var(--width) / 2));
     }
     #cartsContainer.moveVertically #cartPreview{
-        top: calc(var(--height) );
+        top: calc(var(--transform-Y-back) + var(--height) );
     }
     #cartsContainer.moveVertically #cartBack{
         top: calc(-1 * (var(--height)));
