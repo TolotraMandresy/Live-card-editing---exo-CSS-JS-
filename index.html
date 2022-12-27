@@ -55,14 +55,14 @@
       <section>
         <div id="formAndMsg">
           <form action="#" method="post" onsubmit="">
-            <div class="form-control">
+            <div class="form-control" id="cardHolderName">
               <label for="nameInput">Cardholder Name</label><br>
               <div class="gradient">
                 <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" maxlength="21">
               </div>
               <small id="nameErrorMsg"></small>
             </div>
-            <div class="form-control">
+            <div class="form-control" id="cardNumber">
               <label for="nameInput">Card Number</label><br>
               <div class="gradient">
                 <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000"
@@ -78,21 +78,21 @@
                     <input type="month" name="month" id="monthInput" placeholder="MM" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
                   </div>
                   <div class="gradient">
-                    <input type="number" name="year" placeholder="YY" min="2022" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
+                    <input type="number" name="year" id="yearInput" placeholder="YY" min="2022" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
                   </div>
                 </div>
                 <small id="dateErrorMsg"></small>
               </div>
-              <div id="hafa" class="form-control">
+              <div id="cvcForm" class="form-control">
                 <label for="monthInput">CVC</label>
                 <div class="gradient">
-                  <input type="text" name="year" placeholder="e.g. 123" class="font-Grotesk" onfocus="cardsAnimation.animate(true)">
+                  <input type="text" name="year" id="cvcInput" placeholder="e.g. 123" class="font-Grotesk" onfocus="cardsAnimation.animate(true)">
                 </div>
-                <small id="dateErrorMsg"></small>
+                <small id="cvcErrorMsg"></small>
               </div>
             </div>
     
-            <button class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Confirm</button>
+            <button type="button" class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Confirm</button>
           </form>
     
           <div id="success-msg">
@@ -104,16 +104,17 @@
               <br>
               <span id="msg">We've added your card details</span>
             </p>
-            <button class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Continue</button>
+            <button type="button" class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Continue</button>
           </div>
         </div>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="#">Your Name Here</a>.
+        </div>
       </section>
-      <!-- <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
-      </div> -->
     </div>
 
-    <script src="./src/script/script.js"></script>
+    <script src="./src/script/transitions.js"></script>
+    <script src="./src/script/validation.js"></script>
   </body>
 </html>

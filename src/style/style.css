@@ -204,7 +204,7 @@ form {
 }
 
 .form-control {
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     width: 100%;
 }
 .form-control label, .form-control small{
@@ -232,6 +232,7 @@ form {
     width: 100%;
     margin: 2px 2px 4px 0;
     padding: 2px;
+    position: relative;
     background-image: linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     background-image: -o-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     background-image: -moz-linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
@@ -240,7 +241,7 @@ form {
     box-sizing: border-box;
 }
 
-.form-control.error .gradient{
+.form-control .gradient.error{
     background: var(--red);
 }
 
@@ -262,7 +263,7 @@ form {
     color: var(--dark-grayish-purple);
 }
 
-.form-control input:focus, .form-control.error input {
+.form-control input:focus, .form-control .error input {
     outline: 1px none;
     box-shadow: 0 0 0 3px transparent;
 }
@@ -364,10 +365,9 @@ form {
 
 .attribution {
     width: 100%;
+    text-align: center;
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 5px;
 }
 
 @media (max-width: 315px) {
