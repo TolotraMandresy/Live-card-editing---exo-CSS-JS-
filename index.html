@@ -75,10 +75,10 @@
                 <label for="monthInput">Exp. Date (MM/YY)</label>
                 <div id="dateExp">
                   <div class="gradient">
-                    <input type="text" name="number" id="monthInput" placeholder="MM" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" minlength="2" maxlength="2">
+                    <input type="text" pattern="\d{2}" name="number" id="monthInput" placeholder="MM" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" minlength="2" maxlength="2">
                   </div>
                   <div class="gradient">
-                    <input type="text" name="year" id="yearInput" placeholder="YY" min="2022" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" minlength="2" maxlength="2">
+                    <input type="text" pattern="\d{2}" name="year" id="yearInput" placeholder="YY" min="2022" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" minlength="2" maxlength="2">
                   </div>
                 </div>
                 <small id="dateErrorMsg"></small>
@@ -86,7 +86,7 @@
               <div id="cvcForm" class="form-control">
                 <label for="monthInput">CVC</label>
                 <div class="gradient">
-                  <input type="text" name="year" id="cvcInput" placeholder="e.g. 123" class="font-Grotesk" onfocus="cardsAnimation.animate(true)" minlength="3" maxlength="3">
+                  <input type="text" pattern="\d{3}" name="year" id="cvcInput" placeholder="e.g. 123" class="font-Grotesk" onfocus="cardsAnimation.animate(true)" minlength="3" maxlength="3">
                 </div>
                 <small id="cvcErrorMsg"></small>
               </div>
