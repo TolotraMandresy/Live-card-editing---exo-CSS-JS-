@@ -58,7 +58,7 @@
             <div class="form-control" id="cardHolderName">
               <label for="nameInput">Cardholder Name</label><br>
               <div class="gradient">
-                <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" maxlength="21">
+                <input type="text" name="name" id="nameInput" placeholder="e.g. Jane Appleseed" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" maxlength="20">
               </div>
               <small id="nameErrorMsg"></small>
             </div>
@@ -66,7 +66,7 @@
               <label for="nameInput">Card Number</label><br>
               <div class="gradient">
                 <input type="text" name="number" id="numberInput" placeholder="e.g. 1234 5678 9123 0000"
-                class="font-Grotesk" onfocus="cardsAnimation.animate(false)" maxlength="19">
+                class="font-Grotesk" onfocus="cardsAnimation.animate(false)" minlength="16" maxlength="16">
               </div>
               <small id="idErrorMsg"></small>
             </div>
@@ -75,10 +75,10 @@
                 <label for="monthInput">Exp. Date (MM/YY)</label>
                 <div id="dateExp">
                   <div class="gradient">
-                    <input type="month" name="month" id="monthInput" placeholder="MM" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
+                    <input type="text" name="number" id="monthInput" placeholder="MM" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" minlength="2" maxlength="2">
                   </div>
                   <div class="gradient">
-                    <input type="number" name="year" id="yearInput" placeholder="YY" min="2022" class="font-Grotesk" onfocus="cardsAnimation.animate(false)">
+                    <input type="text" name="year" id="yearInput" placeholder="YY" min="2022" class="font-Grotesk" onfocus="cardsAnimation.animate(false)" minlength="2" maxlength="2">
                   </div>
                 </div>
                 <small id="dateErrorMsg"></small>
@@ -86,15 +86,14 @@
               <div id="cvcForm" class="form-control">
                 <label for="monthInput">CVC</label>
                 <div class="gradient">
-                  <input type="text" name="year" id="cvcInput" placeholder="e.g. 123" class="font-Grotesk" onfocus="cardsAnimation.animate(true)">
+                  <input type="text" name="year" id="cvcInput" placeholder="e.g. 123" class="font-Grotesk" onfocus="cardsAnimation.animate(true)" minlength="3" maxlength="3">
                 </div>
                 <small id="cvcErrorMsg"></small>
               </div>
             </div>
     
-            <button type="button" class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Confirm</button>
+            <button type="button" id="confirm" class="confirm font-Grotesk" onclick="toggleSuccessMessage(liveEditing.validateEveryInput())">Confirm</button>
           </form>
-    
           <div id="success-msg">
             <div id="successIcon">
               <img src="./src/images/icon-complete.svg" alt="success icon">
@@ -107,6 +106,7 @@
             <button type="button" class="confirm font-Grotesk" onclick="toggleSuccessMessage()">Continue</button>
           </div>
         </div>
+    
         <div class="attribution">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
           Coded by <a href="#">Your Name Here</a>.

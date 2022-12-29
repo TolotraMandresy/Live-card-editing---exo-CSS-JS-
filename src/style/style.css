@@ -4,7 +4,7 @@
     --light-grayish-purple: hsl(0, 0%, 69%);
     --dark-grayish-purple: hsl(276, 5%, 42%);
     --very-dark-purple: hsl(278, 68%, 11%);
-    --red: hsl(0, 100%, 66%);
+    --red: hsl(0, 86%, 67%);
     --darken-red: hsl(0, 67%, 56%);
 
     --transform-Y-back: -168px;
@@ -218,7 +218,7 @@ form {
 }
 
 .form-control small{
-    font-size: x-small;
+    font-size: xx-small;
     font-weight: bolder;
     letter-spacing: 1.3px;
     vertical-align: top;
@@ -313,6 +313,7 @@ form {
     transition: background 0.5s ease-in, transform 0.3s ease-in-out;
 }
 
+
 .confirm:hover {
     cursor: pointer;
     transform: scale(1.05);
@@ -324,6 +325,14 @@ form {
 
 .confirm:active {
     transform: scale(0.95);
+}
+
+.confirm:disabled{
+    background: var(--dark-grayish-purple);
+}
+.confirm:disabled:hover{
+    cursor: not-allowed;
+    transform: none;
 }
 
 #success-msg {
@@ -367,7 +376,8 @@ form {
     width: 100%;
     text-align: center;
     position: absolute;
-    bottom: 5px;
+    bottom: 2px;
+    margin: 30px auto 10px auto;
 }
 
 @media (max-width: 315px) {
