@@ -168,8 +168,8 @@ section {
     padding-top: 100px;
     width: 86vw;
     max-width: 380px;
-    height: calc(100vh - (var(--height) + 80px + 100px));
-    min-height: calc((var(--height) + 80px + 100px));
+    /* height: calc(100vh - (var(--height) + 80px + 100px)); */
+    /* min-height: calc((var(--height) + 80px + 100px)); */
     margin: auto;
     overflow-x: hidden;
 }
@@ -386,8 +386,17 @@ form {
 .attribution {
     width: 100%;
     text-align: center;
-    margin: auto;
-    margin-bottom: 20px;
+    margin: 30px auto 10px auto;
+    font-size: 12px;
+}
+
+.attribution a{
+    color: hsl(249, 99%, 64%);
+    text-decoration: none;
+}
+
+.attribution a:hover{
+    text-decoration: underline;
 }
 
 @media (max-width: 315px) {
@@ -567,6 +576,7 @@ form {
         position: absolute;
         bottom: 2px;
         right: 20px;
+        margin-bottom: 5px;
         width: max-content;
     }
 }
