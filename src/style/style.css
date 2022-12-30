@@ -385,8 +385,8 @@ form {
 
 .attribution {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
     text-align: center;
     margin: 30px auto 10px auto;
     font-size: 12px;
