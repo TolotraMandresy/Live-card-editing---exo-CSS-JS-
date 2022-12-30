@@ -75,8 +75,8 @@ header {
     display: flex;
     align-self: center;
     position: relative;
-        top: var(--transform-Y-front);
-        left: calc(-1 * var(--transform-X-back));
+    top: var(--transform-Y-front);
+    left: calc(-1 * var(--transform-X-back));
 }
 
 #cartPreview img {
@@ -113,8 +113,8 @@ header {
     z-index: 19;
     align-self: center;
     position: relative;
-        top: var(--transform-Y-back);
-        left: var(--transform-X-back);
+    top: var(--transform-Y-back);
+    left: var(--transform-X-back);
 }
 
 #cartBack img {
@@ -135,24 +135,29 @@ header {
     font-size: smaller;
 }
 
-#cartsContainer.moveLaterally #cartPreview{
+#cartsContainer.moveLaterally #cartPreview {
     left: calc(var(--transform-X-back) - (var(--width) / 2));
 }
-#cartsContainer.moveLaterally #cartBack{
+
+#cartsContainer.moveLaterally #cartBack {
     left: calc(var(--transform-X-back) + (var(--width) / 2));
 }
-#cartsContainer.moveVertically #cartPreview{
+
+#cartsContainer.moveVertically #cartPreview {
     z-index: 19;
     top: calc(var(--height) + var(--transform-Y-back));
 }
-#cartsContainer.moveVertically #cartBack{
+
+#cartsContainer.moveVertically #cartBack {
     z-index: 20;
     top: calc(-1 * (var(--height)) + var(--transform-Y-front));
 }
-#cartsContainer.revertCards #cartPreview{
+
+#cartsContainer.revertCards #cartPreview {
     left: var(--transform-X-back);
 }
-#cartsContainer.revertCards #cartBack{
+
+#cartsContainer.revertCards #cartBack {
     left: calc(-1 * var(--transform-X-back));
 }
 
@@ -178,22 +183,23 @@ section {
     position: relative;
 }
 
-#formAndMsg.showMessage form{
+#formAndMsg.showMessage form {
     transform: translateX(-100vw);
 }
 
-#formAndMsg.showMessage #success-msg{
+#formAndMsg.showMessage #success-msg {
     transform: translateX(0);
     display: flex;
 }
 
-#formAndMsg #success-msg{
+#formAndMsg #success-msg {
     transition: transform 0.5s ease-in-out;
     transform: translateX(100vw);
     position: absolute;
 }
 
-form, #success-msg{
+form,
+#success-msg {
     flex-direction: column;
 }
 
@@ -207,17 +213,20 @@ form {
     margin-bottom: 5px;
     width: 100%;
 }
-.form-control label, .form-control small{
+
+.form-control label,
+.form-control small {
     margin-left: 3px;
     font-family: 'Grotesk';
 }
+
 .form-control label {
     text-transform: uppercase;
     font-weight: bold;
     color: var(--very-dark-purple)
 }
 
-.form-control small{
+.form-control small {
     font-size: xx-small;
     font-weight: bolder;
     letter-spacing: 1.3px;
@@ -241,11 +250,11 @@ form {
     box-sizing: border-box;
 }
 
-.form-control .gradient.error{
+.form-control .gradient.error {
     background: var(--red);
 }
 
-.form-control input{
+.form-control input {
     color: var(--very-dark-purple);
     border-color: transparent;
     outline: 1px solid lightslategray;
@@ -263,7 +272,8 @@ form {
     color: var(--dark-grayish-purple);
 }
 
-.form-control input:focus, .form-control .error input {
+.form-control input:focus,
+.form-control .error input {
     outline: 1px none;
     box-shadow: 0 0 0 3px transparent;
 }
@@ -327,10 +337,11 @@ form {
     transform: scale(0.95);
 }
 
-.confirm:disabled{
+.confirm:disabled {
     background: var(--dark-grayish-purple);
 }
-.confirm:disabled:hover{
+
+.confirm:disabled:hover {
     cursor: not-allowed;
     transform: none;
 }
@@ -375,9 +386,8 @@ form {
 .attribution {
     width: 100%;
     text-align: center;
-    position: absolute;
-    bottom: 2px;
-    margin: 30px auto 10px auto;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 315px) {
@@ -386,45 +396,53 @@ form {
         box-sizing: border-box;
     }
 
-    #cartPreview, #cartBack{
+    #cartPreview,
+    #cartBack {
         position: absolute;
         /* left: 50%; */
         transform: translateX(-50%);
     }
 
-    #cartPreview{
+    #cartPreview {
         top: -10px;
         left: 47%;
     }
-    #cartBack{
+
+    #cartBack {
         left: 53%;
         top: 10px;
     }
 
-    #cartsContainer.moveLaterally #cartPreview{
+    #cartsContainer.moveLaterally #cartPreview {
         left: calc(- var(--width));
     }
-    #cartsContainer.moveLaterally #cartBack{
+
+    #cartsContainer.moveLaterally #cartBack {
         left: calc(var(--width));
     }
-    #cartsContainer.moveVertically #cartPreview{
+
+    #cartsContainer.moveVertically #cartPreview {
         z-index: 19;
         top: 10px;
     }
-    #cartsContainer.moveVertically #cartBack{
+
+    #cartsContainer.moveVertically #cartBack {
         top: -10px;
     }
-    #cartsContainer.revertCards #cartPreview{
+
+    #cartsContainer.revertCards #cartPreview {
         z-index: 20;
         left: 53%;
     }
-    #cartsContainer.revertCards #cartBack{
+
+    #cartsContainer.revertCards #cartBack {
         left: 47%;
     }
 
     section {
         width: 90%;
         padding-top: 50px;
+        margin-bottom: 20px;
     }
 
     #dateExpCvc {
@@ -499,7 +517,7 @@ form {
 
     #cartBack {
         order: 1;
-        position: relative; 
+        position: relative;
         top: 0;
         left: var(--transform-X-back);
     }
@@ -520,23 +538,36 @@ form {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    #cartsContainer.moveLaterally #cartPreview{
+
+    #cartsContainer.moveLaterally #cartPreview {
         left: calc(var(--transform-X-back) - (var(--width) / 2));
     }
-    #cartsContainer.moveLaterally #cartBack{
+
+    #cartsContainer.moveLaterally #cartBack {
         left: calc(var(--transform-X-back) + (var(--width) / 2));
     }
-    #cartsContainer.moveVertically #cartPreview{
+
+    #cartsContainer.moveVertically #cartPreview {
         top: calc(var(--height));
     }
-    #cartsContainer.moveVertically #cartBack{
+
+    #cartsContainer.moveVertically #cartBack {
         top: calc(-1 * (var(--height)));
     }
-    #cartsContainer.revertCards #cartPreview{
+
+    #cartsContainer.revertCards #cartPreview {
         left: var(--transform-X-back);
     }
-    #cartsContainer.revertCards #cartBack{
+
+    #cartsContainer.revertCards #cartBack {
         left: calc(-1 * var(--transform-X-back));
+    }
+
+    .attribution {
+        position: absolute;
+        bottom: 2px;
+        right: 20px;
+        width: max-content;
     }
 }
 
@@ -574,12 +605,12 @@ form {
     #cartPreview img {
         height: 45px;
     }
-    
+
     #cartPreview #id {
         font-size: 24px;
         margin: 45px auto 20px auto;
     }
-    
+
     #cartBack {
         top: calc(var(--transform-Y-back));
         left: calc(var(--transform-X-back));
@@ -594,22 +625,27 @@ form {
         max-width: 360px;
     }
 
-    #cartsContainer.moveLaterally #cartPreview{
+    #cartsContainer.moveLaterally #cartPreview {
         left: calc(var(--transform-X-back) - (var(--width) / 2));
     }
-    #cartsContainer.moveLaterally #cartBack{
+
+    #cartsContainer.moveLaterally #cartBack {
         left: calc(var(--transform-X-back) + (var(--width) / 2));
     }
-    #cartsContainer.moveVertically #cartPreview{
-        top: calc(var(--transform-Y-back) + var(--height) );
+
+    #cartsContainer.moveVertically #cartPreview {
+        top: calc(var(--transform-Y-back) + var(--height));
     }
-    #cartsContainer.moveVertically #cartBack{
+
+    #cartsContainer.moveVertically #cartBack {
         top: calc(-1 * (var(--height)));
     }
-    #cartsContainer.revertCards #cartPreview{
+
+    #cartsContainer.revertCards #cartPreview {
         left: var(--transform-X-back);
     }
-    #cartsContainer.revertCards #cartBack{
+
+    #cartsContainer.revertCards #cartBack {
         left: calc(-1 * var(--transform-X-back));
     }
 }
