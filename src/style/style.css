@@ -171,7 +171,7 @@ section {
     /* height: calc(100vh - (var(--height) + 80px + 100px)); */
     /* min-height: calc((var(--height) + 80px + 100px)); */
     margin: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 #formAndMsg {
@@ -385,6 +385,8 @@ form {
 
 .attribution {
     width: 100%;
+    position: absolute;
+    bottom: 0;
     text-align: center;
     margin: 30px auto 10px auto;
     font-size: 12px;
