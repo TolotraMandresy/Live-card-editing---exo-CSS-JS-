@@ -39,7 +39,7 @@ Here all screenshots from the challenge I've implemented
 
 ## What I learned
 - using flexbox
-- some basic comportement of Javascript: hoisting, using RegExp, 
+- some basic comportement of Javascript, hoisting, using RegExp
 
 ## Author
 
